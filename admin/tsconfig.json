@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    // "target": "es2022",
+       // "module": "commonjs",
+    "useDefineForClassFields": true,
+
+    "target": "ESNext",
+    "module": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "typeRoots": ["./node_modules/@types/", "./types","./src/utils/i18n"],
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "lib": ["dom", "esnext"],
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "mock/**/*.ts",
+    "components.d.ts",
+    "vite.config.ts",
+    "generate-i18n-types.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"]
+}

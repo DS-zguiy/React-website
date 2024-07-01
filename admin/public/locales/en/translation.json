@@ -1,0 +1,9 @@
+{
+    "header": {
+        "save": "save",
+        "editor": "editor"
+    },
+    "footer": {
+        "detail": "All rights reserved @ ReactTravel.com"
+    }
+}
