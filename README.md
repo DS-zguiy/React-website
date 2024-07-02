@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # React-website
 =======
 # React + Nestjs 脚手架
@@ -36,8 +36,8 @@
 - [x] 全局配置
 - [x] 设置代理
 - [x] 国际化
-- [ ] 路由
-- [ ] 权限
+- [x] 路由
+- [x] 权限
 - [ ] 更多...
 
 ## 客户端安装
@@ -91,7 +91,9 @@ vite build
     - **config**: 站点配置
     - **enums**: 枚举类型定义
     - **pages**: 存放页面级组件
+        - **RootPage.tsx**: 根节点
     - **routes**: 路由组件
+         - **routerList**: 路由集合
     - **server**: axios封装
     - **stores**: 状态管理
     - **utils**: 工具类
@@ -102,9 +104,5 @@ vite build
 
 
 
-## 客户端注意事项
-```bash
-暂无
 
-```
->>>>>>> 30d7ed1 (7.1)
+

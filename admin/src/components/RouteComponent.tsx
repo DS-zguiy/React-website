@@ -1,7 +1,7 @@
-import { Route } from "~/types/components";
+import { RouteItem } from "~/types/components";
 
     interface RouteProps {
-        route: Route;
+        route: RouteItem;
     }
 
 
@@ -10,8 +10,8 @@ const RouteComponent: React.FC<RouteProps> = ({ route }) => {
 
     return (<li className="active">
         <a href={`#${route.path}`} className="smooth">
-            {<i className={route.icon}></i>}
-            <span className="title">{route.title}</span>
+            {<i className={route.path}></i>}
+            <span className="title">1111</span>
         </a>
     </li>)
 

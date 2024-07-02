@@ -2,7 +2,7 @@
 import React from 'react';
 import { PiPlusBold } from 'react-icons/pi';
 
-const AddItemComponent: React.FC = ({}) => {
+const AddItemComponent: React.FC = () => {
 
     return (<>
 
