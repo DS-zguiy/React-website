@@ -190,12 +190,29 @@ const Dashboard = lazy(() => import('@/pages/Dashboard'));
 
 代码自动分割
 
+vite.config.ts
+
 ```bash
 
-import { lazy } from 'react';
-
-const Dashboard = lazy(() => import('@/pages/Dashboard'));
-
-
+  build: {
+      target: "es2020",
+      cssTarget: "chrome80",
+      outDir: VITE_OUTPUT_DIR,
+      reportCompressedSize: false,
+      chunkSizeWarningLimit: 2000,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              return id
+                .toString()
+                .split("node_modules/")[1]
+                .split("/")[0]
+                .toString();
+            }
+          },
+        },
+      },
+    },
 
 ```
