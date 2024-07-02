@@ -45,7 +45,7 @@ const routerList: RouteItem[] = [
         label: 'nested',
         element: <NestedLayout />,
         roles: ['user', 'admin'],
-        enable:false,
+        enable: false,
         children: [
           {
             path: 'deep-nested',
@@ -61,21 +61,21 @@ const routerList: RouteItem[] = [
     path: '/login',
     label: 'login',
     element: <LoginPage />,
-    enable:false
+    enable: false
   },
   {
     path: '/admin',
     label: 'admin',
     element: <AdminPage />,
     roles: ['admin'],
-    enable:false
+    enable: false
   },
   {
     path: '/user',
     label: 'user',
     element: <UserPage />,
     roles: ['user'],
-    enable:false
+    enable: false
   }
 ];
 

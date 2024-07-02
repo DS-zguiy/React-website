@@ -35,7 +35,7 @@ export const getCategory = async () => {
 
 export const getUserInfo = async () => {
   return http.request({
-    url: "/api/getUserInfo",
+    url: "/getUserInfo",
     method: "get",
   });
 };

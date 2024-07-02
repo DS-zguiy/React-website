@@ -1,6 +1,6 @@
 // src/AppRoutes.tsx
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {  createHashRouter, RouterProvider } from 'react-router-dom';
 import routerList from './routerList';
 import Loading from '@/pages/Loading'; // 假设有一个加载组件
 import PrivateRoute from './PrivateRoute';
@@ -27,7 +27,7 @@ const renderRoutes = (routes: RouteItem[]) => {
   });
 };
 
-const router = createBrowserRouter(renderRoutes(routerList));
+const router = createHashRouter(renderRoutes(routerList));
 
 const AppRoutes: React.FC = () => {
   return (

@@ -39,6 +39,8 @@
 - [x] 国际化
 - [x] 路由
 - [x] 权限
+- [x] 动态导入
+- [x] 代码自动分割
 - [x] 更多...
 
 ## 客户端安装
@@ -167,5 +169,33 @@ const useUserStore = createWithEqualityFn<UserState>((set) => ({
   clearUser: () => set({ name: "", email: "" }),
   setUserInfo: (userInfo) => set({ userInfo }),
 }));
+
+```
+
+
+
+动态导入
+
+```bash
+
+import { lazy } from 'react';
+
+const Dashboard = lazy(() => import('@/pages/Dashboard'));
+
+
+
+```
+
+
+
+代码自动分割
+
+```bash
+
+import { lazy } from 'react';
+
+const Dashboard = lazy(() => import('@/pages/Dashboard'));
+
+
 
 ```
