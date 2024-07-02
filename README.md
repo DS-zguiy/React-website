@@ -50,7 +50,7 @@
 ```bash
 # 克隆仓库
 
-git clone https://github.com/DS-zguiy/react-nav-website.git
+git clone https://github.com/DS-zguiy/React-website.git
 
 # 进入项目目录
 cd admin
