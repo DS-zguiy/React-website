@@ -1,31 +1,20 @@
 // src/components/Home.tsx
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 
 const UserDashboard: React.FC = () => {
-  const contacts = useLoaderData() as any
+  const contact = useLoaderData() as any
 
-  console.log(contacts);
+
 
 
   return (<div className='page-container'>
-    {contacts.length ? (
+    {contact ? (
       <ul>
-        {contacts.map((contact:any) => (
-          <li key={contact.id}>
-            <Link to={`contacts/${contact.id}`}>
-              {contact.first || contact.last ? (
-                <>
-                  {contact.first} {contact.last}
-                </>
-              ) : (
-                <i>No Name</i>
-              )}{" "}
-              {contact.favorite && <span>★</span>}
-            </Link>
-          </li>
-        ))}
+     <li>{contact.name}</li>
+     <li>{contact.age}</li>
+     <li>{contact.gender}</li>
       </ul>
     ) : (
       <p>

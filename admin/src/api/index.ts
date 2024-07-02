@@ -1,7 +1,5 @@
 import {http} from "@/server";
 
-const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
-console.log(VITE_BASE_URL);
 
 
 export async function uploadFile(data?: any) {
@@ -31,6 +29,13 @@ export async function getData() {
 export const getCategory = async () => {
   return http.request({
     url: "/category/queryCategoryAll",
+    method: "get",
+  });
+};
+
+export const getUserInfo = async () => {
+  return http.request({
+    url: "/api/getUserInfo",
     method: "get",
   });
 };

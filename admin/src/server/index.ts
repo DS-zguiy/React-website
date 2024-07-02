@@ -46,7 +46,7 @@ const transform: AxiosTransform = {
     }
 
     const { data } = res;
-console.log(data);
+
 
     // const $dialog = window["$dialog"];
     // const $message = window["$message"];

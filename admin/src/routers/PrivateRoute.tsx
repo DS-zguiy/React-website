@@ -13,7 +13,6 @@ interface PrivateRouteProps {
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ element, roles = [] }) => {
   const { userInfo, permissions } = useUserStore();
 
-  
   // 如果用户未登录，跳转到登录页面
   if (!userInfo) {
     return <Navigate to="/login" />;
@@ -23,9 +22,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ element, roles = [] }) => {
   if (roles.length && !roles.some((role) => permissions.includes(role))) {
     return <Authority roles={roles}/>;
   }
-
   return element
-
 };
 
 export default PrivateRoute;

@@ -7,8 +7,8 @@ import NestedLayout from '@/pages/NestedLayout';
 import { RouteItem } from '~/types/components';
 import ErrorPage from '@/pages/ErrorPage';
 import Dashboard from '@/pages/Dashboard';
-import { getData } from '@/data/data';
 import UserPage from '@/pages/UserPage';
+import { getUserInfo } from '@/api';
 
 //扁平化路由  
 const routerList: RouteItem[] = [
@@ -18,22 +18,19 @@ const routerList: RouteItem[] = [
     element: <RootPage />, //根节点
     errorElement: <ErrorPage />,
     roles: ['user', 'admin'],
-    enable: true,
     children: [
       {
         path: 'dashboard',
         label: 'dashboard',
         element: <Dashboard />,
         roles: ['user', 'admin'],
-        enable: true,
       },
       {
         path: 'user-dashboard',
         label: 'user-dashboard',
         element: <UserDashboard />,
-        loader: getData,  //预加载数据
+        loader: getUserInfo,  //预加载数据
         roles: ['user'],
-        enable: false,
 
       },
 
@@ -48,14 +45,13 @@ const routerList: RouteItem[] = [
         label: 'nested',
         element: <NestedLayout />,
         roles: ['user', 'admin'],
+        enable:false,
         children: [
-
           {
             path: 'deep-nested',
             label: 'deep-nested',
             element: <NestedLayout />,
             roles: ['user', 'admin'],
-
           },
         ],
       },
@@ -65,21 +61,21 @@ const routerList: RouteItem[] = [
     path: '/login',
     label: 'login',
     element: <LoginPage />,
-    enable: false,
+    enable:false
   },
   {
     path: '/admin',
     label: 'admin',
     element: <AdminPage />,
     roles: ['admin'],
-    enable: false,
+    enable:false
   },
   {
     path: '/user',
     label: 'user',
     element: <UserPage />,
     roles: ['user'],
-    enable: false,
+    enable:false
   }
 ];
 

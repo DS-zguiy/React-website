@@ -5,10 +5,11 @@ interface UserState {
   token: string;
   name: string;
   email: string;
-  permissions:string; //登陆的身份
+  permissions: string; //登陆的身份
   setUser: (name: string, email: string) => void;
   clearUser: () => void;
   setUserInfo: (userInfo: any) => void;
+  setPermissions: (permissions:string) => void,
 }
 
 const useUserStore = createWithEqualityFn<UserState>((set) => ({
@@ -16,8 +17,9 @@ const useUserStore = createWithEqualityFn<UserState>((set) => ({
   name: "",
   email: "",
   token: "",
-  permissions:"user",
+  permissions: "user",
   setUser: (name, email) => set({ name, email }),
+  setPermissions: (permissions) => set({ permissions }),
   clearUser: () => set({ name: "", email: "" }),
   setUserInfo: (userInfo) => set({ userInfo }),
 }));
