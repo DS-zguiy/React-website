@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Form } from "react-router-dom";
 
 interface ContactProps {
@@ -9,25 +10,55 @@ interface ContactProps {
   favorite: boolean;
 }
 
-const contact: ContactProps = {
-  first: "Your",
-  last: "Name",
-  avatar: "https://robohash.org/you.png?size=200x200",
-  twitter: "your_handle",
-  notes: "Some notes",
-  favorite: true,
-};
+// const contact: ContactProps = {
+//   first: "Your",
+//   last: "Name",
+//   avatar: "https://robohash.org/you.png?size=200x200",
+//   twitter: "your_handle",
+//   notes: "Some notes",
+//   favorite: true,
+// };
 
+
+
+
+let id = 1
 const Contact: React.FC = () => {
+
+
+  const [contact, setContact] = useState({
+    first: "Your",
+    last: "Name",
+    num: 1,
+    avatar: "https://robohash.org/you.png?size=200x200",
+    twitter: "your_handle",
+    notes: "Some notes",
+    favorite: true,
+  })
+
+
+  const handleClick = () => {
+    setContact({
+      ...contact,
+      num: id += 1,
+    })
+  }
+
+  const imgData = {
+
+    src: contact.avatar ||
+      `https://robohash.org/${contact.first}${contact.last}.png?size=200x200`
+
+
+  }
+
+
   return (
     <div id="contact">
       <div>
         <img
           key={contact.avatar}
-          src={
-            contact.avatar ||
-            `https://robohash.org/${contact.first}${contact.last}.png?size=200x200`
-          }
+          {...imgData}
           alt={`${contact.first} ${contact.last}`}
         />
       </div>
@@ -56,27 +87,11 @@ const Contact: React.FC = () => {
           </p>
         )}
 
-        {contact.notes && <p>{contact.notes}</p>}
+        {contact.notes && <p>{contact.num}</p>}
 
         <div>
-          <Form action="edit">
-            <button type="submit">Edit</button>
-          </Form>
-          <Form
-            method="post"
-            action="destroy"
-            onSubmit={(event) => {
-              if (
-                !confirm(
-                  "Please confirm you want to delete this record."
-                )
-              ) {
-                event.preventDefault();
-              }
-            }}
-          >
-            <button type="submit">Delete</button>
-          </Form>
+
+          <button onClick={() => { handleClick() }}>change</button>
         </div>
       </div>
     </div>

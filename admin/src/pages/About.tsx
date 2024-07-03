@@ -1,8 +1,14 @@
 // src/components/About.tsx
-import React from 'react';
+import React, { Fragment } from 'react';
+
+//tian
+
+const handleClick=()=>{
+
+}
 
 const About: React.FC = () => {
-  return <h1>About</h1>;
+  return <Fragment> <h1 onClick={handleClick}>About</h1></Fragment>
 }
 
 export default About;
